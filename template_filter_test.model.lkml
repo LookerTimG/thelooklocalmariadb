@@ -1,4 +1,4 @@
-connection: "thelook"
+connection: "thelooklocalmariadb"
 
 # include all the views
 include: "order_items.view"
@@ -37,7 +37,7 @@ explore: order_items {
 
   join: cohort_by_brand {
     type: inner
-    relationship: one_to_many
+    relationship: one_to_one
     sql_on: ${users.id} = ${cohort_by_brand.user_id} ;;
   }
 }

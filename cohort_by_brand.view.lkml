@@ -1,6 +1,6 @@
 view: cohort_by_brand {
   derived_table: {
-    sql: SELECT u.id AS user_id
+    sql: SELECT DISTINCT u.id AS user_id
           , p.brand
 
       FROM order_items oi
@@ -10,7 +10,7 @@ view: cohort_by_brand {
       ON ii.product_id = p.id
       INNER JOIN orders o
       ON oi.order_id = o.id
-      INNER JOIN users U
+      INNER JOIN users u
       ON o.user_id = u.id
       WHERE {% condition brand_purchased %} p.brand {% endcondition %}
        ;;
