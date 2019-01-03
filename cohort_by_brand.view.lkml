@@ -32,7 +32,7 @@ view: cohort_by_brand {
     type: string
 #     suggest_explore: order_items
 #     suggest_dimension: products.brand
-    suggest_explore: cohort_by_brand
-    suggest_dimension: brand
+    suggest_explore: order_items
+    suggest_dimension: products.brand
   }
 }

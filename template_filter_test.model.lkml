@@ -1,7 +1,13 @@
-connection: "thelooklocalmariadb"
+connection: "thelook"
 
 # include all the views
-include: "*.view"
+include: "order_items.view"
+include: "inventory_items.view"
+include: "orders.view"
+include: "products.view"
+include: "users.view"
+include: "cohort_by_brand.view"
+include: "filter_test.view"
 
 
 explore: order_items {
