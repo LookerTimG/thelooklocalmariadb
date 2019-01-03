@@ -3,14 +3,6 @@ connection: "thelooklocalmariadb"
 # include all the views
 include: "*.view"
 
-datagroup: default_datagroup {
-  max_cache_age: "24 hour"
-}
-
-datagroup: fourhrt_datagroup {
-  max_cache_age: "4 hour"
-}
-persist_with: default_datagroup
 
 explore: order_items {
   join: inventory_items {
@@ -43,3 +35,5 @@ explore: order_items {
     sql_on: ${users.id} = ${cohort_by_brand.user_id} ;;
   }
 }
+
+  explore: filter_test {}

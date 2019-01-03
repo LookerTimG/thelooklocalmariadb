@@ -12,6 +12,7 @@ view: cohort_by_brand {
       ON oi.order_id = o.id
       INNER JOIN users U
       ON o.user_id = u.id
+      WHERE {% condition brand_purchased %} p.brand {% endcondition %}
        ;;
   }
 
@@ -29,7 +30,9 @@ view: cohort_by_brand {
   filter: brand_purchased {
     description: "Choose the brand your cohort has purchased"
     type: string
-    suggest_explore: order_items
-    suggest_dimension: products.brand
+#     suggest_explore: order_items
+#     suggest_dimension: products.brand
+    suggest_explore: cohort_by_brand
+    suggest_dimension: brand
   }
 }
